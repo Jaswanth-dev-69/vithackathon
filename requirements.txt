@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+faiss-cpu
+transformers
+torch
+PyPDF2
+langchain
+langchain-community
+tqdm
+python-dotenv
+numpy
