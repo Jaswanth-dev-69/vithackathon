@@ -1,0 +1,8 @@
+# Place your PDF files here
+# Example:
+# doc1.pdf
+# doc2.pdf
+# medical_research.pdf
+
+# Note: Large PDF files should NOT be committed to git
+# Add *.pdf to .gitignore to prevent accidental commits
