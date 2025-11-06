@@ -48,4 +48,4 @@ def ingest_dir(data_dir="data"):
     print("✅ Ingestion complete!")
 
 if __name__ == "__main__":
-    ingest_dir("data/")
+    ingest_dir("data/Dataset")

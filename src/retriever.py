@@ -4,6 +4,7 @@ from typing import List, Dict
 from transformers import pipeline
 import numpy as np
 from dotenv import load_dotenv
+from utils import summarize_contexts
 
 load_dotenv()
 
@@ -51,12 +52,10 @@ def answer_query(query: str, top_k: int = 5) -> Dict[str, any]:
     # Get the relevant contexts
     contexts = [texts[i] for i in I[0] if i < len(texts)]
     
-    # For now, use the top context as the answer
-    # In a full RAG system, you would use an LLM to generate an answer
-    answer = contexts[0] if contexts else "No relevant context found."
+    # Generate a summarized answer from the contexts
+    answer = summarize_contexts(contexts, query) if contexts else "No relevant context found."
     
     return {
         "answer": answer,
-        "contexts": contexts,
-        "scores": D[0].tolist() if len(D) > 0 else []
+        "contexts": contexts
     }

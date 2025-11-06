@@ -1,6 +1,7 @@
 import os
 from PyPDF2 import PdfReader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 def pdf_to_text(path: str) -> str:
     """Extract text from a PDF file."""

@@ -67,14 +67,6 @@ def fallback_root(req: QueryRequest):
     return query_route(req)
 
 
-
-# 👇 Optional fallback: handles evaluator calling "/" directly
-@app.post("/", response_model=QueryResponse)
-def fallback_root(req: QueryRequest):
-    """Redirect POST / to /query for compatibility with evaluators"""
-    return query_route(req)
-
-
 # ----- RUN SERVER -----
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))
